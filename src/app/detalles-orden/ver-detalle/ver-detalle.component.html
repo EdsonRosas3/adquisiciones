@@ -1,0 +1,48 @@
+<div class="card text-center">
+    <div class="card-header">
+        <h4 class="card-title">Detalle de compra</h4>
+    </div>
+    <div class="card-body">
+        <table *ngFor="let product of products" class="table table-success table-striped">
+            <tr>
+                <th>Purchase Order:</th>
+                <td>{{ product.purchaseOrder }}</td>
+            </tr>
+            <tr>
+                <th>Quatity:</th>
+                <td>{{ product.quatity }}</td>
+            </tr>
+            <tr>
+                <th>Unit Cost:</th>
+                <td>{{ product.unitCost }}</td>
+            </tr>
+            <tr>
+                <th>Measure Unit:</th>
+                <td>{{ product.measureUnit }}</td>
+            </tr>
+            <tr>
+                <th>Total Amount:</th>
+                <td>{{ product.totalAmount }}</td>
+            </tr>
+            <tr>
+                <th>Item:</th>
+                <td>{{ product.item}}</td>
+            </tr>
+            <tr>
+                <th>Provider Item Code:</th>
+                <td>{{ product.providerItemCode }}</td>
+            </tr>
+            <tr>
+                <th>Item Code:</th>
+                <td>{{ product.itemCode }}</td>
+            </tr>
+            <tr>
+                <th>Provider Unit:</th>
+                <td>{{ product.unidadDelProveedor}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="card-header">
+
+    </div>
+</div>
