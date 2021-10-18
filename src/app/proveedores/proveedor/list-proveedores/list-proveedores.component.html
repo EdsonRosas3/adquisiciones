@@ -1,0 +1,28 @@
+<form class="container mt-4" >
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Rubro</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Direción</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let provider of providers;  let i = index">
+        <th scope="row" >{{i}}</th>
+        <td>{{provider.name}}</td>
+        <td>{{provider.rubro}}</td>
+        <td>{{provider.email}}</td>
+        <td>{{provider.direction}}</td>
+        <td>{{provider.phone}}</td>
+        <a class="btn btn-warning text-white mt-1" routerLink="/update" (click)="saveIdProveedor(provider.id)" data-bs-toogle="modal"  data-bs-targe="modal-register">Actualizar</a>
+        <button class="btn btn-danger text-white ml-2 mt-1" type="submit" (click)="deleteProvider(provider.id)">Eliminar</button>
+      </tr>
+    </tbody>
+  </table>
+</form>

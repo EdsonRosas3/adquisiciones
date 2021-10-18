@@ -1,10 +1,45 @@
 {
-    "users": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "ordenes": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
-  
+  "users": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "ordenes": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "providers": [
+    {
+      "email": "201700951@est.umss.edu",
+      "name": "Yolanda Pascual Rivera",
+      "rubro": "",
+      "direction": "zona sur",
+      "phone": "4440082",
+      "id": 8
+    },
+    {
+      "email": "edsoned@gmail.com",
+      "name": "Edson",
+      "rubro": "Zapatero",
+      "direction": "Oeste",
+      "phone": "",
+      "id": 13
+    },
+    {
+      "email": "calr@gmail.com",
+      "name": "Carla",
+      "rubro": "mecanica",
+      "direction": "zona sur",
+      "phone": "+11111111111",
+      "id": 14
+    }
+  ]
+}
