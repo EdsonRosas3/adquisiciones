@@ -96,6 +96,24 @@
       "balanceAmount": "1214",
       "amountProduct": "15",
       "id": 5
+    },
+    {
+      "state": "",
+      "receivedType": "",
+      "paymentStatus": "",
+      "totalAmount": "",
+      "balanceAmount": "",
+      "amountProduct": "",
+      "id": 6
+    },
+    {
+      "state": "PEN",
+      "receivedType": "RP",
+      "paymentStatus": "NO_PAYMENT",
+      "totalAmount": "40",
+      "balanceAmount": "40",
+      "amountProduct": "2",
+      "id": 7
     }
   ],
   "users": [
@@ -117,20 +135,28 @@
   },
   "providers": [
     {
-      "email": "201700951@est.umss.edu",
-      "name": "Yolanda Pascual Rivera",
-      "rubro": "",
-      "direction": "zona sur",
-      "phone": "4440082",
-      "id": 8
+      "email": "edson@gmail.com",
+      "name": "Edson",
+      "rubro": "Desarrollador",
+      "direction": "huayllani chico sacaba",
+      "phone": "741856541",
+      "id": 13
     },
     {
-      "email": "edsoned@gmail.com",
-      "name": "Edson",
-      "rubro": "Zapatero",
-      "direction": "Oeste",
-      "phone": "",
-      "id": 13
+      "email": "rosas.eds.000333@gmail.com",
+      "name": "Actualizar",
+      "rubro": "desarrollo de software",
+      "direction": "sacaba-huayllani",
+      "phone": "7485296",
+      "id": 14
+    },
+    {
+      "email": "mauro@gmail.com",
+      "name": "Mauro",
+      "rubro": "Venta de dispositivos",
+      "direction": "primero de mayo",
+      "phone": "71484950",
+      "id": 15
     }
   ],
   "items": [
@@ -220,6 +246,15 @@
       "amountOfDescount": "5",
       "status": "ACTIVE",
       "id": 8
+    },
+    {
+      "name": "Promoción 1",
+      "type": "DESCUENTO",
+      "expirationDate": "2021-10-22",
+      "productId": "1",
+      "amountOfDescount": "5",
+      "status": "ACTIVE",
+      "id": 9
     }
   ]
 }

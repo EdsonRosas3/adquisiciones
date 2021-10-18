@@ -40,7 +40,7 @@ export class UpdateProveedorComponent implements OnInit {
     this.service.putProveedor(this.id, this.form.value).subscribe(arg =>{
       console.log(arg)
     })
-    //this.form.reset() 
+    this.form.reset() 
   }
 
 }
