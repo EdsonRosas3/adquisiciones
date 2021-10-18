@@ -20,7 +20,7 @@
         <td>{{provider.email}}</td>
         <td>{{provider.direction}}</td>
         <td>{{provider.phone}}</td>
-        <a class="btn btn-warning text-white mt-1" routerLink="/update" (click)="saveIdProveedor(provider.id)" data-bs-toogle="modal"  data-bs-targe="modal-register">Actualizar</a>
+        <a class="btn btn-warning text-white mt-1" routerLink="/update/{{provider.id}}" (click)="saveIdProveedor(provider.id)" data-bs-toogle="modal"  data-bs-targe="modal-register">Actualizar</a>
         <button class="btn btn-danger text-white ml-2 mt-1" type="submit" (click)="deleteProvider(provider.id)">Eliminar</button>
       </tr>
     </tbody>
