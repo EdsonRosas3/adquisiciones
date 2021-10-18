@@ -1,0 +1,43 @@
+<div class="container" style="margin-top: 70px;">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Estado</th>
+          <th>Tipo de recepcion</th>
+          <th>Estado de pago</th>
+          <th>Monto total</th>
+          <th>Monto del balance</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of ordersNoEnd" >
+          <td> {{ order.id }}</td>
+          <td> {{ order.state }}</td>
+          <td> {{ order.receivedType }}</td>
+          <td> {{ order.paymentStatus }}</td>
+          <td> {{ order.totalAmount }}</td>
+          <td> {{ order.balanceAmount }}</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button type="button" class="btn btn-dark" (click)="finalizeOrder(order)">Finalizar</button>
+              <button type="button" class="btn btn-primary">Editar</button>
+              <button type="button" class="btn btn-success" (click)="selectOrder(order)">Ver detalle</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card text-center" *ngIf="selectedOrder">
+        <div class="card-header">
+          # {{selectedOrder.id}}
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">{{selectedOrder.state}}</h4>
+          <p class="card-text">
+            {{selectedOrder.receivedType}}
+          </p>    
+        </div>
+      </div>
+  </div>
