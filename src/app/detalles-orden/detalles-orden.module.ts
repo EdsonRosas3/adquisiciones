@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { VerDetalleComponent } from './ver-detalle/ver-detalle.component';
+import { DetailRoutingModule } from './detail-routing.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    VerDetalleComponent
+  ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    DetailRoutingModule,
+  ],
+  exports:[
+    VerDetalleComponent
+   ]
 })
 export class DetallesOrdenModule { }

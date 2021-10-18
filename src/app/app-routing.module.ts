@@ -9,12 +9,20 @@ const routes: Routes = [
   {path: "order-create", component: CrearOrdenCompraComponent},
   {path: "order-edit", component: EditPurchaseOrderComponent},
   {path: "orderNoEnd-list", component: ListPurchaseOrdenNoEndComponent},
-  {path: "orderEnd-list", component: ListPurchaseOrderEndComponent}    
+  {path: "orderEnd-list", component: ListPurchaseOrderEndComponent},   
 
+  {path: 'ver-detalle', loadChildren: () => import('./detalles-orden/detalles-orden.module').then(m => m.DetallesOrdenModule)},
+  {
+    path: 'promotion',
+    loadChildren: () =>
+      import('./descuentos-promociones/descuentos-promociones.module').then(
+        (m) => m.DescuentosPromocionesModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
