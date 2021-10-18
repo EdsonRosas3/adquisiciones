@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Orden } from 'src/app/models/Orden';
 import { DetalleOrdenService } from '../detalle-orden.service';
+import { Products } from '../products';
+import { Provider } from '../provider';
 import { PurchaseOrders } from '../purchaseOrders';
 
 @Component({
@@ -10,27 +13,33 @@ import { PurchaseOrders } from '../purchaseOrders';
 })
 
 export class VerDetalleComponent implements OnInit {
-  public model!: PurchaseOrders;
-  public detalleOrden!: PurchaseOrders;
-  public originalDetalleOrden!: PurchaseOrders;
-  public products: Array<any> = [];
+
+  orden!:Orden;
+  products!:Products[];
+  providers!:Provider[];
+  id!:number;
   constructor(private activatedRoute: ActivatedRoute, private detalle: DetalleOrdenService) {
-    let id = this.activatedRoute.snapshot.params.id;
-    this.builtData();
-    this.detalle.getProduct().subscribe((arg: any) => {
+    this.id = this.activatedRoute.snapshot.params.id;
+
+    /* this.detalle.getProduct().subscribe((arg: any) => {
       console.log(arg);
       this.products = arg;
       this.model = Object.assign({}, this.products[0]);
       this.originalDetalleOrden = this.products[0];
-    });
+    }); */
   }
 
   ngOnInit(): void {
+    this.getProductId();
   }
-  getProductId(id: number){
+  getProductId(){
   
-    this.detalle.getProductId(id).subscribe(arg => {
-      console.log(arg);
+    this.detalle.getProductId(this.id).subscribe(arg => {
+      this.orden=arg;
+      this.products= this.orden.products;
+      this.providers= this.orden.provider;
+      console.log("RES",this.orden);
+
     });
   console.log('esta funcionando');
   }
