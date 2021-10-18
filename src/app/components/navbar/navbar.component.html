@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Grupo 6</a>
+    <button class="navbar-toggler" type="button" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-nav">
+      <app-option-navbar
+          *ngFor="let option of options"
+          [option]= "option"
+          (activationControl)="activationControl($event)"
+      ></app-option-navbar>
+      
+           
+
+      
+    </div>
+     
+  </nav>
+
+
+

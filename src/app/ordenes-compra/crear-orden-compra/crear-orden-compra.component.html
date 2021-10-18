@@ -2,39 +2,32 @@
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
       <div>
-        <form>
+        <form [formGroup]="form" (ngSubmit)="createOrder()">
           <div class="form-group">
-            <label for="id">ID</label>
-            <input [(ngModel)]="order.id" [type="text" name="id" class="form-control" id="id" aria-describedby="idHelp" placeholder="Enter ID">
-            <small id="idHelp" class="form-text text-muted">Enter your contact’s ID</small>
+            
 
             <label for="name">Estado</label>
-            <input [(ngModel)]="order.state" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
-            <small id="nameHelp" class="form-text text-muted">Enter your contact’s name</small>
+            <input formControlName="state" name="state" type="text" class="form-control" id="name" aria-describedby="nameHelp">
 
             <label for="name">Tipo de recepcion</label>
-            <input [(ngModel)]="order.receivedType" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
-            <small id="nameHelp" class="form-text text-muted">Enter your contact’s name</small>
+            <input formControlName="receivedType" name="receivedType" type="text" class="form-control" id="name" aria-describedby="nameHelp">
 
             <label for="name">Estado del pago</label>
-            <input [(ngModel)]="order.paymentStatus" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
-            <small id="nameHelp" class="form-text text-muted">Enter your contact’s name</small>
+            <input formControlName="paymentStatus" name="paymentStatus" type="text" class="form-control" id="name" aria-describedby="nameHelp">
 
             <label for="name">Monto total</label>
-            <input [(ngModel)]="order.totalAmount" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
-            <small id="nameHelp" class="form-text text-muted">Enter your contact’s name</small>
+            <input formControlName="totalAmount" name="totalAmount" type="text" class="form-control" id="name" aria-describedby="nameHelp">
 
             <label for="name">Monto del balance</label>
-            <input [(ngModel)]="order.balanceAmount" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
-            <small id="nameHelp" class="form-text text-muted">Enter your contact’s name</small>
+            <input formControlName="balanceAmount" name="balanceAmount" type="text" class="form-control" id="name" aria-describedby="nameHelp">
 
             <label for="name">Cantidad del producto</label>
-            <input [(ngModel)]="order.amountProduct" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
-            <small id="nameHelp" class="form-text text-muted">Enter your contact’s name</small>
+            <input formControlName="amountProduct" name="amountProduct"type="text" class="form-control" id="name" aria-describedby="nameHelp">
           
           </div>
+          <button class="btn btn-primary"  type="submit">Crear orden</button>
         </form>
-        <button class="btn btn-primary" (click)="createOrder()">Crear orden</button>
+       
       </div>
     </div>
   </div>

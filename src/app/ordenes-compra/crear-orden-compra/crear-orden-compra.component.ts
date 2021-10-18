@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Orden } from 'src/app/models/Orden';
 import { PurchaseOrderService } from '../purchase-order.service';
 
 @Component({
@@ -8,22 +10,26 @@ import { PurchaseOrderService } from '../purchase-order.service';
 })
 export class CrearOrdenCompraComponent implements OnInit {
   
-  order: {id:number, state:string, receivedType:string, paymentStatus:string, totalAmount:number, balanceAmount:number, amountProduct:number, products:any, provider:any }={id: 0, state: "", receivedType: "", paymentStatus: "", totalAmount:0, balanceAmount:0, amountProduct:0, products:[], provider:[]};
-  constructor(public orderService: PurchaseOrderService) { }
+  form:FormGroup;
+  constructor(public orderService: PurchaseOrderService,private formBuild:FormBuilder) { 
+    this.form = this.formBuild.group({
+      state:[''],
+      receivedType:[''],
+      paymentStatus:[''],
+      totalAmount:[''],
+      balanceAmount:[''],
+      amountProduct:[''],
+    })
+  }
 
   ngOnInit(): void {
   }
 
   createOrder(){
-    this.orderService.createOrder(this.order).subscribe(
-      data =>{
-        console.log("POST Request is successful ", data);
-      },
-      error => {
-        console.log("Error", error);
-      } 
-    )
-    this.order = {id: 0, state: "", receivedType: "", paymentStatus: "", totalAmount: 0, balanceAmount: 0, amountProduct:0, products:[], provider:[]};
+    this.orderService.createOrder(this.form.value).subscribe(arg =>{
+      console.log(arg)
+    }) 
+    //this.form.reset()
   }
 
 }

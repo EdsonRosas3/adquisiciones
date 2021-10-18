@@ -67,7 +67,7 @@
       ]
     },
     {
-      "id": 1,
+      "id": 4,
       "state": "PEN",
       "receivedType": "RP",
       "paymentStatus": "NO_PAYMENT",
@@ -87,9 +87,17 @@
           "name": "nombreProveedor"
         }
       ]
+    },
+    {
+      "state": "PEN",
+      "receivedType": "asdfasdf",
+      "paymentStatus": "asdfasdf",
+      "totalAmount": "558",
+      "balanceAmount": "1214",
+      "amountProduct": "15",
+      "id": 5
     }
   ],
-
   "users": [
     {
       "id": 1,
@@ -212,7 +220,6 @@
       "status": "ACTIVE",
       "id": 7
     },
-
     {
       "name": "Promocion 8",
       "type": "DESCUENTO",

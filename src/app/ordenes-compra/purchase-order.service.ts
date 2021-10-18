@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Orden } from '../models/Orden';
 
 @Injectable({
   providedIn: 'root'
@@ -15,18 +17,21 @@ export class PurchaseOrderService {
   public getOrders(){
     return this.http.get('http://localhost:3000/orders')
   }
+  public getOrder(id:number):Observable<any>{
+    return this.http.get('http://localhost:3000/orders/'+id)
+  }
 
-  public createOrder(purchaseOrder: {id:number, state:string, receivedType:string, paymentStatus:string, totalAmount:number, balanceAmount:number, amountProduct:number, products:any, provider:any }){
+  public createOrder(purchaseOrder:Orden):Observable<any>{
     return this.http.post('http://localhost:3000/orders',purchaseOrder)
   }
 
-  public finalizeOrder(purchaseOrder: {id:number, state:string, receivedType:string, paymentStatus:string, totalAmount:number, balanceAmount:number, amountProduct:number, products:any, provider:any }){
+  public finalizeOrder(purchaseOrder:Orden):Observable<any>{
     //purchaseOrder.state = "FIN";
     return this.http.put('http://localhost:3000/orders',purchaseOrder)
   }
 
-  public editOrder(purchaseOrder: {id:number, state:string, receivedType:string, paymentStatus:string, totalAmount:number, balanceAmount:number, amountProduct:number, products:any, provider:any }){
-    return this.http.put('http://localhost:3000/orders',purchaseOrder)
+  public editOrder(purchaseOrder:Orden, id:number):Observable<any>{
+    return this.http.put('http://localhost:3000/orders/'+id,purchaseOrder)
   }
 
 }
