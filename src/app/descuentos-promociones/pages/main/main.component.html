@@ -1,0 +1,46 @@
+<section class="container mt-5">
+  <h1 class="h3 font-weight-bolder">Promociones</h1>
+  <div class="bg-light shadow p-3 mb-5 bg-white rounded">
+    <header class="d-flex justify-content-between align-items-end">
+      <div class="input-group d-inline w-25">
+        <label for="" class="text-muted"> Tipo de Promocion: </label>
+        <select
+          aria-placeholder="seleccione"
+          (change)="handlerSelect($event)"
+          class="input form-control"
+        >
+          <option value="" selected disabled>- Todos -</option>
+          <option *ngFor="let option of options" [value]="option.key">
+            {{ option.value }}
+          </option>
+        </select>
+      </div>
+      <button
+        class="btn bg-success btn-secondary"
+        (click)="redirectToCreatePromotion()"
+      >
+        Nueva Promocion
+      </button>
+    </header>
+    <table class="table my-3">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Fecha de Vencimiento</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let promotion of promotions">
+          <th scope="row">{{ promotion.id }}</th>
+          <td>{{ promotion.name }}</td>
+          <td>{{ promotion.expirationDate }}</td>
+          <td>{{ promotion.type }}</td>
+          <td>{{ promotion.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

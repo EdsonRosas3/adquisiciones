@@ -1,0 +1,69 @@
+<section class="container mt-5 w-50">
+  <h1 class="h3 font-weight-bolder">Promociones</h1>
+  <div class="bg-light shadow p-3 mb-5 bg-white rounded">
+    <h2 class="h5 font-weight-bolder">Promoción</h2>
+    <form [formGroup]="promotion" (ngSubmit)="sendData()">
+      <div class="form-group">
+        <label> Nombre: </label>
+        <input type="text" formControlName="name" class="form-control" />
+      </div>
+      <div class="row px-3 justify-content-between">
+        <div class="form-group col-6 pl-0">
+          <label> Caducación: </label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="expirationDate"
+            [min]="currentDate"
+          />
+        </div>
+        <div class="form-group col-6 px-0">
+          <label> Tipo de Promoción: </label>
+          <select
+            aria-placeholder="seleccione"
+            formControlName="type"
+            class="input form-control"
+            (change)="select($event)"
+          >
+            <option value="" selected disabled>- Seleccione -</option>
+            <option *ngFor="let type of typePromotion" [value]="type">
+              {{ type }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="row" *ngIf="showFieldsOfDescount">
+        <div class="form-group col-8">
+          <label> Seleccione el Producto </label>
+          <select class="input form-control" formControlName="productId">
+            <option value="" selected disabled>- Seleccione -</option>
+            <option *ngFor="let item of items" [value]="item.id">
+              {{ item.name }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group w-50 col-4">
+          <label> Descuento % </label>
+          <select class="input form-control" formControlName="amountOfDescount">
+            <option value="" selected disabled>- Seleccione -</option>
+            <option value="5">5</option>
+            <option value="5">10</option>
+            <option value="5">20</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="btns d-flex flex-row-reverse">
+        <input
+          type="submit"
+          class="btn btn-primary ml-3"
+          value="Guardar"
+          [disabled]="promotion.invalid"
+        />
+        <button class="btn btn-tertiary" type="button" (click)="comeBack()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

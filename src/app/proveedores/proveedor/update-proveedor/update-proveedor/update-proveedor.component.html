@@ -1,0 +1,49 @@
+ <div class="modal-register" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Registro de Proveedor</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="updateData()">
+                    <div class="form-row">
+
+                      <div class="form-group">
+                        <label for="inputName">Nombre</label>
+                        <input formControlName="name" name="name" type="text" class="form-control" id="inputName" placeholder="Nombre del proveedor">
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Correo electrónico</label>
+                        <input formControlName="email" name="email" type="email" class="form-control" id="inputEmail" placeholder="Correo electrónico">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputRubro">Rubro</label>
+                        <input formControlName="rubro" name="rubro" type="text" class="form-control" id="inputRubro" placeholder="Rubro">
+                      </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="inputAddress">Dirección</label>
+                      <input formControlName="direction" name="direction" type="text" class="form-control" id="inputAddress" placeholder="Dirección">
+                    </div>    
+
+                    <div class="form-group">
+                      <label for="inputPhone">Telefóno</label>
+                      <input formControlName="phone" name="phone" type="text" class="form-control" id="inputPhone" placeholder="Telefóno">
+                    </div>
+                    </div> 
+                    
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+
+                  </form>
+            </div>
+        
+          </div>
+        </div>
+</div>
+ 
