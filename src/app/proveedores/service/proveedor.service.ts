@@ -14,6 +14,10 @@ export class ProveedorService {
 
   }
 
+  getProduct(id:number):Observable<any>{
+    return this.http.get(this._url+"/"+id);
+  }
+
   getProveedores():Observable<any>{
     return this.http.get(this._url)
   }

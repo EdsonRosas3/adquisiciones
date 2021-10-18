@@ -24,7 +24,7 @@
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
               <button type="button" class="btn btn-dark" (click)="finalizeOrder(order)">Finalizar</button>
               <button type="button" class="btn btn-primary" routerLink="/order-edit/{{order.id}}" >Editar</button>
-              <button type="button" class="btn btn-success" (click)="selectOrder(order)">Ver detalle</button>
+              <button type="button" class="btn btn-success" routerLink="/ver-detalle/{{order.id}}">Ver detalle</button>
             </div>
           </td>
         </tr>

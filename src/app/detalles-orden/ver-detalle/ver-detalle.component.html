@@ -1,46 +1,48 @@
-<div class="card text-center">
-    <div class="card-header">
-        <h4 class="card-title">Detalle de compra</h4>
-    </div>
-    <div class="card-body" *ngFor="let product of products">
-        <div *ngIf="product.id == 1">
-        <table>
-            <tr>
-                <th>ID Orden de compra:</th>
-                <td>{{ product.id }}</td>
-            </tr>
-            <tr>
-                <th>ID del proveedor:</th>
-                <td>{{ product.provider[0].id}}</td>
-            </tr>
-            <tr>
-                <th>Nombre del proveedor:</th>
-                <td>{{ product.provider[0].name }}</td>
-            </tr> 
-            <tr>
-                <th>ID del producto:</th>
-                <td>{{ product.products[0].id }}</td>
-            </tr>
-            <tr>
-                <th>Nombre del producto:</th>
-                <td>{{ product.products[0].name }}</td>
-            </tr>
-            <tr>
-                <th>Costo unitario del producto:</th>
-                <td>{{ product.products[0].price }} Bs</td>
-            </tr>
-            <tr>
-                <th>Cantidad de productos:</th>
-                <td>{{ product.amountProduct }}</td>
-            </tr>
-            <tr>
-                <th>Monto total a pagar:</th>
-                <td>{{ product.totalAmount}} Bs.</td>
-            </tr>
-        </table>
-    </div>
-    </div>
-    <div class="card-header">
 
+<div class="container ">
+    <div class="card m-3" style="width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title">ID Orden de compra: {{ orden.id }}</h5>
+          <h6 class="card-subtitle mb-2 ">Cantidad de productos: {{ orden.amountProduct }}</h6>
+          <h6 class="card-subtitle mb-2 ">Monto total a pagar: {{ orden.totalAmount}} Bs.</h6>
+          <br>
+          <h5 class="card-title">Productos</h5>
+        <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre Producto</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let item of products; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+          <h5 class="card-title">Proveedores</h5>
+        <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre proveedor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let item of providers; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.name}}</td>
+                
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
     </div>
+
 </div>
