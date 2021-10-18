@@ -13,8 +13,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.options = [
-      {id:1,nombre:"Inicio",url:"inicio", activo:true},
-      {id:2,nombre:"Servicios",url:"servicio",activo:false},
+      {id:1,nombre:"Inicio",url:"/", activo:true},
+      {id:2,nombre:"Promociones",url:"/promotion/promotions",activo:false},
       {id:3,nombre:"Nosotros",url:"nosotros",activo:false},
       {id:4,nombre:"Contacto",url:"contacto",activo:false}];
   }

@@ -15,6 +15,6 @@ import { PublicModule } from './core/public/public.module';
     PublicModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

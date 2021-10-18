@@ -1,5 +1,109 @@
 {
-    
-    
+  "users": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "ordenes": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "items": [
+    {
+      "id": 1,
+      "name": "pepsi",
+      "categoryId": "Gaseosas"
+    },
+    {
+      "id": 2,
+      "name": "cocacola",
+      "categoryId": "Gaseosas"
+    },
+    {
+      "id": 3,
+      "name": "incacola",
+      "categoryId": "Gaseosas"
+    }
+  ],
+  "promotions": [
+    {
+      "id": 1,
+      "productId": 1,
+      "name": "promocion 1",
+      "type": "DESCUENTO",
+      "status": "EXPIRED",
+      "expirationDate": "2021-07-03"
+    },
+    {
+      "id": 2,
+      "productId": 2,
+      "name": "promocion 2",
+      "type": "DESCUENTO",
+      "status": "EXPIRED",
+      "expirationDate": "2021-07-03"
+    },
+    {
+      "name": "Promocion 3",
+      "type": "DESCUENTO",
+      "expirationDate": "2021-10-23",
+      "productId": 1,
+      "amountOfDescount": "",
+      "status": "ACTIVE",
+      "id": 3
+    },
+    {
+      "name": "Promocion 4",
+      "type": "DESCUENTO",
+      "expirationDate": "2021-10-28",
+      "productId": 1,
+      "amountOfDescount": "",
+      "status": "ACTIVE",
+      "id": 4
+    },
+    {
+      "name": "Promocion 5",
+      "type": "DESCUENTO",
+      "expirationDate": "2021-10-29",
+      "productId": 1,
+      "amountOfDescount": "",
+      "status": "ACTIVE",
+      "id": 5
+    },
+    {
+      "name": "Promocion 6",
+      "type": "DESCUENTO",
+      "expirationDate": "2021-10-30",
+      "productId": "3",
+      "amountOfDescount": "5",
+      "status": "ACTIVE",
+      "id": 6
+    },
+    {
+      "name": "Promocion 7",
+      "type": "DESCUENTO",
+      "expirationDate": "2021-10-30",
+      "productId": "3",
+      "amountOfDescount": "5",
+      "status": "ACTIVE",
+      "id": 7
+    },
+
+    {
+      "name": "Promocion 8",
+      "type": "DESCUENTO",
+      "expirationDate": "2021-11-30",
+      "productId": "3",
+      "amountOfDescount": "5",
+      "status": "ACTIVE",
+      "id": 8
+    }
+  ]
 }
-  
