@@ -1,44 +1,50 @@
 {
-  "detalles": [ {
-    "purchaseOrder": 123,
-    "quatity": 5,
-    "unitCost": 15,
-    "measureUnit": "Bs",
-    "totalAmount": 75,
-    "item": "Shampoo",
-    "providerItemCode": "codigoP11",
-    "itemCode": "codigo11",
-    "unidadDelProveedor": "texto en blanco"},
-    {
-      "purchaseOrder": 987,
-      "quatity": 2,
-      "unitCost": 6,
-      "measureUnit": "Bs",
-      "totalAmount": 12,
-      "item": "Crema",
-      "providerItemCode": "codigoP12",
-      "itemCode": "codigo111",
-      "unidadDelProveedor": "texto en blanco"},
-      {
-        "purchaseOrder": 654,
-        "quatity": 10,
-        "unitCost": 4,
-        "measureUnit": "Bs",
-        "totalAmount": 40,
-        "item": "Alcohol en Gel",
-        "providerItemCode": "codigoP13",
-        "itemCode": "codigo211",
-        "unidadDelProveedor": "texto en blanco"}
-    
-  ],
-  "comments": [
+  "purchaseOrders": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "state": "PEN",
+      "receivedType": "RP",
+      "paymentStatus": "NO_PAYMENT",
+      "totalAmount": 30,
+      "balanceAmount": 10,
+      "amountProduct": 3,
+      "products": [
+        {
+          "id": 1,
+          "name": "Coca cola",
+          "price": 10
+        }
+      ],
+      "provider": [
+        {
+          "id": 1,
+          "name": "Martin Beltran"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "state": "FIN",
+      "receivedType": "RT",
+      "paymentStatus": "FULLY_PAID",
+      "totalAmount": 20,
+      "balanceAmount": 0,
+      "amountProduct": 2,
+      "products": [
+        {
+          "id": 2,
+          "name": "Fanta",
+          "price": 10
+        }
+      ],
+      "provider": [
+        {
+          "id": 1,
+          "name": "Javier Mora"
+        }
+      ],
+      "measureUnit": "Bs",
+      "payAmout": 30
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

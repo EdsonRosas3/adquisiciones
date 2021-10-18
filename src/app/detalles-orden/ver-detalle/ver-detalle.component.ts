@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OrdenesCompraModule } from 'src/app/ordenes-compra/ordenes-compra.module';
-import { DetalleOrdenCompra } from '../detalle-orden-compra';
 import { DetalleOrdenService } from '../detalle-orden.service';
+import { PurchaseOrders } from '../purchaseOrders';
 
 @Component({
   selector: 'app-ver-detalle',
@@ -11,11 +10,12 @@ import { DetalleOrdenService } from '../detalle-orden.service';
 })
 
 export class VerDetalleComponent implements OnInit {
-  public model!: DetalleOrdenCompra;
-  public detalleOrden!: DetalleOrdenCompra;
-  public originalDetalleOrden!: DetalleOrdenCompra;
+  public model!: PurchaseOrders;
+  public detalleOrden!: PurchaseOrders;
+  public originalDetalleOrden!: PurchaseOrders;
   public products: Array<any> = [];
   constructor(private activatedRoute: ActivatedRoute, private detalle: DetalleOrdenService) {
+    let id = this.activatedRoute.snapshot.params.id;
     this.builtData();
     this.detalle.getProduct().subscribe((arg: any) => {
       console.log(arg);
@@ -27,21 +27,39 @@ export class VerDetalleComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  getProductId(id: number){
+  
+    this.detalle.getProductId(id).subscribe(arg => {
+      console.log(arg);
+    });
+  console.log('esta funcionando');
+  }
   builtData(): void {
     let id = this.activatedRoute.snapshot.params.id;
     console.log(id);
-    this.detalleOrden = {
-      purchaseOrder: 123,
-      quatity: 5,
-      unitCost: 15,
-      measureUnit: 'Bs',
-      totalAmount: 75,
-      item: 'Jabon',
-      providerItemCode: 'Acosta',
-      itemCode: 'codigo1',
-      unidadDelProveedor: 'texto en blanco'
+    /* this.detalleOrden = {
+      id: 1,
+      state: 'PEN',
+      receivedType: 'RP',
+      paymentStatus: 'NO_PAYMENT',
+      totalAmount: 30,
+      balanceAmount: 10,
+      amountProduct: 3,
+      products: [
+        {
+          id: 23,
+          name: 'Alcohol en gel',
+          price: 10
+        }
+      ],
+      provider: [
+        {
+          id: 23,
+          name: 'Alcohol en gel'
+        }
+      ]
     }
-    /* this.detalle.postProduct(this.detalleOrden).subscribe((newDetalle: any) => {
+    this.detalle.postProduct(this.detalleOrden).subscribe((newDetalle: any) => {
       console.log(newDetalle);
       this.products = this.products.concat(newDetalle);
     }); */

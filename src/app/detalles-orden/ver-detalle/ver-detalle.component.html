@@ -2,45 +2,43 @@
     <div class="card-header">
         <h4 class="card-title">Detalle de compra</h4>
     </div>
-    <div class="card-body">
-        <table *ngFor="let product of products" class="table table-success table-striped">
+    <div class="card-body" *ngFor="let product of products">
+        <div *ngIf="product.id == 1">
+        <table>
             <tr>
-                <th>Purchase Order:</th>
-                <td>{{ product.purchaseOrder }}</td>
+                <th>ID Orden de compra:</th>
+                <td>{{ product.id }}</td>
             </tr>
             <tr>
-                <th>Quatity:</th>
-                <td>{{ product.quatity }}</td>
+                <th>ID del proveedor:</th>
+                <td>{{ product.provider[0].id}}</td>
             </tr>
             <tr>
-                <th>Unit Cost:</th>
-                <td>{{ product.unitCost }}</td>
+                <th>Nombre del proveedor:</th>
+                <td>{{ product.provider[0].name }}</td>
+            </tr> 
+            <tr>
+                <th>ID del producto:</th>
+                <td>{{ product.products[0].id }}</td>
             </tr>
             <tr>
-                <th>Measure Unit:</th>
-                <td>{{ product.measureUnit }}</td>
+                <th>Nombre del producto:</th>
+                <td>{{ product.products[0].name }}</td>
             </tr>
             <tr>
-                <th>Total Amount:</th>
-                <td>{{ product.totalAmount }}</td>
+                <th>Costo unitario del producto:</th>
+                <td>{{ product.products[0].price }} Bs</td>
             </tr>
             <tr>
-                <th>Item:</th>
-                <td>{{ product.item}}</td>
+                <th>Cantidad de productos:</th>
+                <td>{{ product.amountProduct }}</td>
             </tr>
             <tr>
-                <th>Provider Item Code:</th>
-                <td>{{ product.providerItemCode }}</td>
-            </tr>
-            <tr>
-                <th>Item Code:</th>
-                <td>{{ product.itemCode }}</td>
-            </tr>
-            <tr>
-                <th>Provider Unit:</th>
-                <td>{{ product.unidadDelProveedor}</td>
+                <th>Monto total a pagar:</th>
+                <td>{{ product.totalAmount}} Bs.</td>
             </tr>
         </table>
+    </div>
     </div>
     <div class="card-header">
 

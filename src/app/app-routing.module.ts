@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VerDetalleComponent } from './detalles-orden/ver-detalle/ver-detalle.component';
 
 const routes: Routes = [
-  {
-    path: 'ver-detalle/:id', component: VerDetalleComponent
-  }
+  {path: 'ver-detalle', loadChildren: () => import('./detalles-orden/detalles-orden.module').then(m => m.DetallesOrdenModule)},
 ];
 
 @NgModule({
