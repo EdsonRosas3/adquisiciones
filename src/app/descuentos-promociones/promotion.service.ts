@@ -67,16 +67,23 @@ export class PromotionService {
   }
 
   private isLessThat(date: string, days: number) {
-    let day = date.split('-')[2];
-    return parseInt(day) < days;
+    let dateSplited = date.split('-');
+    let day = dateSplited[2];
+    let month = dateSplited[1];
+    let currentDate = new Date();
+    return (
+      currentDate.getMonth() + 1 === parseInt(month) &&
+      parseInt(day) - currentDate.getDate() < days
+    );
   }
 
   findPromotionsNextToExpire(): Observable<Promotion[]> {
     this.http.get<Promotion[]>(this.urlBase).subscribe((res: Promotion[]) => {
       //TODO why its executing many times
-      console.log('execute');
-      this.promotions = res.filter((promotion) =>
-        this.isLessThat(promotion.expirationDate, 10)
+      this.promotions = res.filter(
+        (promotion) =>
+          this.isLessThat(promotion.expirationDate, 15) &&
+          promotion.status !== 'EXPIRED'
       );
       this.promotions$.next(this.promotions);
     });

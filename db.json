@@ -47,7 +47,7 @@
       "productId": 2,
       "name": "promocion 2",
       "type": "DESCUENTO",
-      "status": "ACTIVE",
+      "status": "EXPIRED",
       "expirationDate": "2021-07-03"
     },
     {
@@ -85,6 +85,25 @@
       "amountOfDescount": "5",
       "status": "ACTIVE",
       "id": 6
+    },
+    {
+      "name": "Promocion 7",
+      "type": "DESCUENTO",
+      "expirationDate": "2021-10-30",
+      "productId": "3",
+      "amountOfDescount": "5",
+      "status": "ACTIVE",
+      "id": 7
+    },
+
+    {
+      "name": "Promocion 8",
+      "type": "DESCUENTO",
+      "expirationDate": "2021-11-30",
+      "productId": "3",
+      "amountOfDescount": "5",
+      "status": "ACTIVE",
+      "id": 8
     }
   ]
 }
